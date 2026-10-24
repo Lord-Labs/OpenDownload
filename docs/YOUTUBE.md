@@ -49,7 +49,7 @@ Repeat a small real video/MP3 test against an instance with media tools enabled:
 ```sh
 python scripts/media-smoke.py \
   --source 'https://youtu.be/2cUkUbB3Gu4' \
-  --video-option video-134
+  --video-option video-230
 ```
 
 The smoke verifies actual stream types/duration using FFprobe, HTTP ranges and

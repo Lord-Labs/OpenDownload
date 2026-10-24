@@ -39,4 +39,13 @@ func TestYouTubePublicFormatsAndRestrictions(t *testing.T) {
 			t.Fatalf("restricted YouTube accepted: %v", err)
 		}
 	}
+	for i := range raw.Formats {
+		if raw.Formats[i].ID == "137" {
+			raw.Formats[i].Bytes, raw.Formats[i].Approx = 0, 0
+		}
+	}
+	a, err := Normalize(raw, "https://youtu.be/2cUkUbB3Gu4")
+	if err != nil || a.Options[0].Bytes != 0 {
+		t.Fatalf("unknown video size was presented as a known merged size: %+v %v", a.Options, err)
+	}
 }

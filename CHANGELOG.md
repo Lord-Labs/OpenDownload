@@ -20,7 +20,9 @@
 
 - Refresh compatible dependency PRs together; patch Go, Next.js, Zod and
   source-map-js security advisories. Keep Node declarations on Node 24 and defer
-  TypeScript 7 until the installed lint tooling supports its compiler API.
+  TypeScript 7 and ESLint 10 until the installed lint plugins support them.
+- Report merged file size as unknown when either selected track has no known
+  size, rather than displaying only the audio track's size for YouTube HLS video.
 
 - Preserve original progressive MP4 formats when LinkedIn/Pinterest/Threads
   omit codec metadata; rank unknown-resolution formats by reported bitrate.

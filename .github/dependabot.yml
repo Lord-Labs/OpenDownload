@@ -6,6 +6,9 @@ updates:
       interval: weekly
     open-pull-requests-limit: 5
     ignore:
+      # Next's React, import and accessibility plugins still declare ESLint 9 peers.
+      - dependency-name: eslint
+        versions: [">=10"]
       # typescript-eslint cannot load the TypeScript 7 compiler API yet.
       - dependency-name: typescript
         versions: [">=7"]

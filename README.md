@@ -42,8 +42,9 @@ Built with **Next.js, TypeScript, Go, yt-dlp and FFmpeg**, with SQLite for durab
 
 ## Sources And Scope
 
-**Current source adds YouTube, LinkedIn, Pinterest and Threads.** The public application
-has separate deployment evidence; self-hosters must build from `main` to get all current adapters. The published
+**Current source adds YouTube, LinkedIn, Pinterest and Threads.** Self-hosters
+must build from `main` to get all current adapters. The public application's
+running revision has separate [verification evidence](docs/VERIFICATION.md). The published
 `v0.1.0` container images and release tag retain their original scope.
 
 | Source                                        | Current capability                                                              |

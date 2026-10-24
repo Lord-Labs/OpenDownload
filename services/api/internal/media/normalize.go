@@ -158,7 +158,12 @@ func Normalize(raw RawInfo, source string) (Analysis, error) {
 				ext = "mkv"
 			}
 			detail = fmt.Sprintf("%s · audio included", strings.ToUpper(ext))
-			bytes += audio.Bytes
+			// A partial track size is not the merged file size.
+			if bytes > 0 && audio.Bytes > 0 {
+				bytes += audio.Bytes
+			} else {
+				bytes = 0
+			}
 		} else {
 			detail += " · audio included"
 		}

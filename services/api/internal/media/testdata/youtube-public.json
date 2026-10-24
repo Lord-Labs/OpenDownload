@@ -1,0 +1,50 @@
+{
+  "title": "Public video",
+  "extractor_key": "Youtube",
+  "availability": "public",
+  "duration": 130,
+  "formats": [
+    {
+      "format_id": "140",
+      "ext": "m4a",
+      "height": null,
+      "width": null,
+      "fps": null,
+      "tbr": 129.517,
+      "vcodec": "none",
+      "acodec": "mp4a.40.2",
+      "protocol": "https",
+      "filesize": 2099162,
+      "filesize_approx": 2099146,
+      "has_drm": false
+    },
+    {
+      "format_id": "18",
+      "ext": "mp4",
+      "height": 360,
+      "width": 640,
+      "fps": 25,
+      "tbr": 515.975,
+      "vcodec": "avc1.42001E",
+      "acodec": "mp4a.40.2",
+      "protocol": "https",
+      "filesize": null,
+      "filesize_approx": 8362664,
+      "has_drm": false
+    },
+    {
+      "format_id": "137",
+      "ext": "mp4",
+      "height": 1080,
+      "width": 1920,
+      "fps": 25,
+      "tbr": 3069.038,
+      "vcodec": "avc1.640028",
+      "acodec": "none",
+      "protocol": "https",
+      "filesize": 49718424,
+      "filesize_approx": 49718415,
+      "has_drm": false
+    }
+  ]
+}

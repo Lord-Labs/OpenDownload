@@ -200,10 +200,6 @@ func (s *Server) analyze(w http.ResponseWriter, r *http.Request) {
 		problem(w, 400, "invalid_request", "Enter one public URL.")
 		return
 	}
-	if u, err := security.Parse(input.URL); err == nil && media.YouTubeSource(u.String()) {
-		problem(w, 422, "youtube_unavailable", media.ErrYouTubeUnavailable.Error())
-		return
-	}
 	ctx, cancel := context.WithTimeout(r.Context(), 45*time.Second)
 	defer cancel()
 	var normalized string
@@ -236,8 +232,6 @@ func (s *Server) analyze(w http.ResponseWriter, r *http.Request) {
 			return
 		}
 		switch {
-		case errors.Is(err, media.ErrYouTubeUnavailable):
-			problem(w, 422, "youtube_unavailable", media.ErrYouTubeUnavailable.Error())
 		case errors.Is(err, media.ErrPlatformVerification):
 			problem(w, 503, "platform_verification_required", media.ErrPlatformVerification.Error())
 		case errors.Is(err, media.ErrUpstreamForbidden):

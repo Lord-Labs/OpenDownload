@@ -42,12 +42,13 @@ Built with **Next.js, TypeScript, Go, yt-dlp and FFmpeg**, with SQLite for durab
 
 ## Sources And Scope
 
-**Current source adds LinkedIn, Pinterest and Threads.** The public application
-uses these adapters; self-hosters must build from `main` to get them. The published
+**Current source adds YouTube, LinkedIn, Pinterest and Threads.** The public application
+has separate deployment evidence; self-hosters must build from `main` to get all current adapters. The published
 `v0.1.0` container images and release tag retain their original scope.
 
 | Source                                        | Current capability                                                              |
 | --------------------------------------------- | ------------------------------------------------------------------------------- |
+| YouTube                                       | Public videos/audio with yt-dlp 2026.10.21; [setup and limits](docs/YOUTUBE.md) |
 | LinkedIn                                      | Public video posts and activity links; `lnkd.in` redirects                      |
 | Pinterest                                     | Public video pins and original single-image pins; `pin.it` and regional domains |
 | Threads                                       | Public single video/image posts and image-only collections up to 20 items       |
@@ -55,7 +56,7 @@ uses these adapters; self-hosters must build from `main` to get them. The publis
 | SoundCloud                                    | Public audio tracks                                                             |
 | Direct links                                  | Public video, audio and image files                                             |
 
-> **Public content you own or have permission to save only.** YouTube, private,
+> **Public content you own or have permission to save only.** Private,
 > authenticated, paywalled, live and DRM-protected content are excluded. No cookies,
 > access-control bypass or watermark removal. An adapter is not a guarantee that
 > every link works. Instagram/TikTok dedicated photo galleries remain deferred.
@@ -124,7 +125,7 @@ ORM or microservice orchestration is required.
 
 ## Development
 
-Node.js **24**, pnpm **11.25.0**, Go **1.27.1+**, Python **3.12+**, yt-dlp and FFmpeg.
+Node.js **24**, pnpm **11.25.0**, Go **1.27.3+**, Python **3.12+**, yt-dlp and FFmpeg.
 
 ```sh
 pnpm install --frozen-lockfile

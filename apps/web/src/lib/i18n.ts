@@ -201,14 +201,6 @@ export const messages = {
     "يعمل مع الروابط العامة من",
   ],
   supportedSites: ["Supported sites", "المواقع المدعومة"],
-  youtubeUnavailableNote: [
-    "YouTube is not included in v0.1.",
-    "YouTube غير مدعوم في الإصدار 0.1.",
-  ],
-  youtubeUnavailable: [
-    "YouTube is not supported in v0.1. Try a link from the supported sites.",
-    "YouTube غير مدعوم في الإصدار 0.1. جرّب رابطًا من المواقع المدعومة.",
-  ],
   siteAvailability: [
     "Formats vary by link. Photo galleries have limited support.",
     "تختلف الصيغ حسب الرابط. دعم معارض الصور محدود حاليًا.",

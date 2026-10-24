@@ -23,8 +23,9 @@ collections remain available. See [release notes](releases/0.1.0.md).
 
 ## Essential MVP
 
-Current source expands the supported-sites guide with LinkedIn, Pinterest and
-Threads. Use only public post/pin links with accessible media; individual videos,
+Current source supports public YouTube videos through stable yt-dlp 2026.10.21
+([limits and evidence](YOUTUBE.md)), and expands the supported-sites guide with
+LinkedIn, Pinterest and Threads. Use only public post/pin links with accessible media; individual videos,
 Pinterest original images and bounded Threads image collections follow the same
 analysis, queue, expiry and guarded-network flow. See
 [source boundaries](SOCIAL_SOURCES.md). Published v0.1.0 images remain unchanged.

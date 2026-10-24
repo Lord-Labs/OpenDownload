@@ -19,7 +19,7 @@ Only introduce dependencies that solve a documented problem.
 | Queue          | Capacity, owner scope, atomic claims, terminal transitions, restart recovery                                 |
 | Worker/storage | Cancel, timeouts, subprocess failure, malicious output path/symlink, cleanup, byte limits                    |
 | HTTP           | JSON limits, CSRF/origin, cookies, hidden ownership failures, range/attachment serving                       |
-| Release        | Consistent SemVer metadata; YouTube rejection before DNS/tools; translated recovery; uploaded-image pull/run |
+| Release        | Consistent SemVer metadata; Public YouTube analysis through the normal URL policy; translated fixture recovery; uploaded-image pull/run |
 | Frontend       | URL detection/format utilities, lint, strict typecheck, production build                                     |
 | E2E            | Fixture analysis → select → create → complete → save, failure/retry/cancel, narrow-screen reflow             |
 | Linux          | Race detector, process descendants killed, direct egress blocked, Docker health                              |

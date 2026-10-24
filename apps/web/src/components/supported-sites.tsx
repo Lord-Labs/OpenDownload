@@ -11,10 +11,12 @@ import { ThreadsLogoIcon } from "@phosphor-icons/react/dist/csr/ThreadsLogo";
 import { RedditLogoIcon } from "@phosphor-icons/react/dist/csr/RedditLogo";
 import { SoundcloudLogoIcon } from "@phosphor-icons/react/dist/csr/SoundcloudLogo";
 import { PlayCircleIcon } from "@phosphor-icons/react/dist/csr/PlayCircle";
+import { YoutubeLogoIcon } from "@phosphor-icons/react/dist/csr/YoutubeLogo";
 import { useLocale } from "@/components/locale-provider";
 import { sources } from "@/lib/media";
 
 const logos: Record<string, typeof GlobeSimpleIcon> = {
+  YouTube: YoutubeLogoIcon,
   Instagram: InstagramLogoIcon,
   TikTok: TiktokLogoIcon,
   "X / Twitter": XLogoIcon,
@@ -51,7 +53,6 @@ export function SupportedSites() {
         <div className="sites-note">
           <span>{t("directLinks")}</span>
           <p>{t("siteAvailability")}</p>
-          <p>{t("youtubeUnavailableNote")}</p>
         </div>
       </div>
     </details>

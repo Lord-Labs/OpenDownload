@@ -1,6 +1,33 @@
 # Verification record
 
-## Current source: social adapters - 2026-10-03
+## Current source: public YouTube and dependency review — 2026-10-24
+
+These are local Windows results against the real Go API and guarded egress
+proxy, with yt-dlp 2026.10.21, bundled EJS, Node 24 and FFmpeg/FFprobe 9.0.2.
+They do not establish availability from a cloud host or every YouTube URL.
+
+- The reported URL `https://youtu.be/2cUkUbB3Gu4` analyzed successfully. A direct
+  format-18 smoke produced 8,358,410 bytes with H.264 video and AAC audio.
+- The API job selected `video-230`, downloaded separate media tracks and merged
+  an **8,424,151-byte MP4**. FFprobe found video/audio, duration 129.660227 seconds.
+  SHA-256: `29002d6872b09fb5f8e50cec5c3c23fea4e26fd01259a76a9f8082c2e8d79a71`.
+- The API MP3 job produced **3,113,520 bytes**, an audio stream and duration
+  129.660227 seconds.
+  SHA-256: `16acb00860ea853ee5cf87e02f2bf58a69f712ccff641d740618dea7557a99bd`.
+- Both jobs passed byte-range serving and file revocation after deletion via
+  `scripts/media-smoke.py --video-option video-230`.
+- All Go package tests and `go vet` passed with Go 1.27.3. The new regressions
+  cover YouTube format selection, access restrictions, DNS safety and unknown
+  merged file sizes. Frontend lint, typecheck, 16 unit tests and production
+  build passed. `govulncheck` and the production npm audit reported no known
+  vulnerabilities; the final dependency set has no peer dependency issues.
+- Required Linux CI, including the race detector, browser tests and container
+  network checks, is tracked on [PR #51](https://github.com/Lord-Labs/OpenDownload/pull/51).
+  Docker Desktop was unavailable for local container verification.
+
+Research, upstream links and reproduction: [YOUTUBE.md](YOUTUBE.md).
+
+## Social adapter verification — 2026-10-03
 
 These checks apply to the current development source, not the immutable v0.1.0
 release images or the public application's running revision.

@@ -6,12 +6,13 @@ The 0.1 phase completes M0–M4, the locale/RTL portion of M5, M6 workspace
 refinement and M7 public real-download deployment. Release delivery is recorded
 in [issue #36](https://github.com/Lord-shaban/OpenDownload/issues/36), the
 [release notes](releases/0.1.0.md) and [verification](VERIFICATION.md).
-YouTube is explicitly excluded; the API and interface enforce that boundary.
+The immutable first release excludes YouTube. Current source now enables public
+YouTube videos using the stable upstream client; see [evidence and limits](YOUTUBE.md).
 
 ### Deferred beyond 0.1
 
-- YouTube cloud extraction: [#27](https://github.com/Lord-shaban/OpenDownload/issues/27).
-  Investigation retained; experimental PR #30 is not merged.
+- Universal YouTube cloud availability remains unpromised: [#27](https://github.com/Lord-shaban/OpenDownload/issues/27).
+  Current-source public extraction uses stable yt-dlp; experimental PR #30 remains unmerged.
 - Dedicated public social photo-gallery adapter:
   [#13](https://github.com/Lord-shaban/OpenDownload/issues/13).
   Evaluation completed; integration and authorized live fixtures remain future work.

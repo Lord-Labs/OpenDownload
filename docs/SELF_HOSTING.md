@@ -7,7 +7,8 @@ downloader without further abuse protection and stronger worker sandboxing.
 For a cloud demo that never extracts real media, see
 [the fixture-only preview deployment](PREVIEW_DEPLOYMENT.md).
 The bounded real public instance uses [the fenced cloud profile](FENCED_CLOUD.md).
-YouTube is deliberately unavailable in all v0.1 deployment profiles.
+The immutable v0.1.0 images exclude YouTube. Current-source builds support public
+YouTube videos; see [setup, limits and verification](YOUTUBE.md).
 
 ## Install a fixed release
 
@@ -71,8 +72,9 @@ Do not add another external network to API, host-network it, or bypass the proxy
 Trusted native development lacks a network fence; environment proxies are not an
 isolation boundary. No cookies, credentials, proxies from users or arbitrary flags.
 Update the pinned yt-dlp and distribution-provided FFmpeg through reviewed image rebuilds; no live
-self-updating workers. YouTube is excluded from v0.1. Upstream access restrictions
-on other sources remain terminal; do not import credentials or evade denied access.
+self-updating workers. The pinned `default` dependency group installs EJS; Node 24
+is enabled explicitly with `--js-runtimes node`, and remote components are disabled.
+Upstream access restrictions remain terminal; do not import credentials or evade denied access.
 
 ## Public deployment checklist
 

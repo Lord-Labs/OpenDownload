@@ -5,6 +5,16 @@ updates:
     schedule:
       interval: weekly
     open-pull-requests-limit: 5
+    ignore:
+      # Next's React, import and accessibility plugins still declare ESLint 9 peers.
+      - dependency-name: eslint
+        versions: [">=10"]
+      # typescript-eslint cannot load the TypeScript 7 compiler API yet.
+      - dependency-name: typescript
+        versions: [">=7"]
+      # Keep Node declarations aligned with the Node 24 deployment runtime.
+      - dependency-name: "@types/node"
+        versions: [">=25"]
   - package-ecosystem: gomod
     directory: /services/api
     schedule:

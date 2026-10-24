@@ -1,14 +1,16 @@
-# Capabilities — OpenDownload 0.1
+# Capabilities — current source
 
 ## Platform scope
 
-**YouTube is not supported in v0.1.** The API returns `youtube_unavailable`
-(HTTP 422) before source DNS/extraction. It also rejects YouTube extractor results
-and persisted YouTube processing/retries. The experimental attestation/browser
-work in [PR #30](https://github.com/Lord-shaban/OpenDownload/pull/30) is not part
-of this release. Its investigation is deferred, not fixed.
+**Current source supports public YouTube videos** using pinned yt-dlp 2026.10.21,
+its new default `tv_samsung` client and locally installed EJS scripts with Node 24.
+Build from `main`; immutable v0.1.0 images still exclude YouTube. No account
+cookies, token provider, browser automation or remote script fetching is used.
+Private, authenticated, live and DRM content remain unsupported. Upstream
+verification, HTTP 403 and rate limits remain explicit failures.
+See [YouTube research and evidence](YOUTUBE.md).
 
-The compact sites list includes Instagram, TikTok, X/Twitter, Facebook, Reddit,
+The compact sites list includes YouTube, Instagram, TikTok, X/Twitter, Facebook, Reddit,
 Vimeo and SoundCloud. These are candidate extractors: availability depends on
 each URL, region, upstream changes and the host's access. The list does not
 certify every extractor or imply that every public post is downloadable.
@@ -28,7 +30,7 @@ metadata transport, exclusions and verification evidence.
 | Direct image                          | Owned public JPEG downloaded with exact bytes, ranges and delete revocation                                                         |
 | Instagram, X, Facebook, Reddit, Vimeo | Upstream adapters available; no release-wide live URL matrix or availability guarantee                                              |
 | Social photo galleries                | Dedicated Instagram/TikTok gallery adapter deferred; only safe image entries already returned by the extractor                      |
-| YouTube                               | Explicitly unavailable in 0.1                                                                                                       |
+| YouTube                               | Public video/audio through current-source builds; see [evidence](YOUTUBE.md). Unavailable in tagged v0.1.0 images                   |
 
 Exact tagged-image and release-deployment evidence belongs to
 [release issue #36](https://github.com/Lord-shaban/OpenDownload/issues/36).

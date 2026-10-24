@@ -1,8 +1,9 @@
 # Real downloads in a single cloud container
 
 This profile serves anonymous users and always runs the real extraction engine.
-Release 0.1 excludes YouTube. It returns a clear policy message before extraction;
-no experimental Chromium or YouTube token provider is included in release images.
+Tagged v0.1.0 images exclude YouTube. Current-source builds use yt-dlp 2026.10.21
+for public YouTube media with the same guarded proxy and namespace boundary; see
+[research and verification](YOUTUBE.md). No Chromium or token provider is required.
 The original three-container [Compose deployment](SELF_HOSTING.md) and the
 fixture-only preview are separate profiles.
 

@@ -71,7 +71,7 @@ test("clipboard button and native paste analyze without an extra submit", async 
   for (const source of ["Instagram", "TikTok", "SoundCloud"]) {
     await expect(sourceList).toContainText(source);
   }
-  await expect(sourceList).not.toContainText("YouTube");
+  await expect(sourceList).toContainText("YouTube");
   await expect(
     page.getByText(/Photo galleries have limited support/),
   ).toBeVisible();

@@ -4,6 +4,7 @@ export function displayText(value: string) {
   return value.replace(/[\u061c\u200e\u200f\u202a-\u202e\u2066-\u2069]/gu, "");
 }
 export const sources = [
+  "YouTube",
   "Instagram",
   "TikTok",
   "X / Twitter",
@@ -18,6 +19,7 @@ export const sources = [
 const platforms: Record<string, string> = {
   "youtube.com": "YouTube",
   "youtu.be": "YouTube",
+  "youtube-nocookie.com": "YouTube",
   "instagram.com": "Instagram",
   "tiktok.com": "TikTok",
   "twitter.com": "X / Twitter",

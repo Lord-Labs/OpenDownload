@@ -27,7 +27,6 @@ func TestAnalysisReturnsSafeDistinctFailureCodes(t *testing.T) {
 		status int
 		code   string
 	}{
-		{media.ErrYouTubeUnavailable, 422, "youtube_unavailable"},
 		{media.ErrPlatformVerification, 503, "platform_verification_required"},
 		{media.ErrUpstreamForbidden, 503, "upstream_forbidden"},
 		{media.ErrUpstreamRateLimit, 503, "upstream_rate_limited"},

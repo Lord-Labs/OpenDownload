@@ -78,12 +78,6 @@ try:
            "--env", "OD_FIXTURE_MODE=true", "--mount", "type=volume,src=" + volume + ",dst=/data",
            image)
     ready()
-    try:
-        api("/analyze", {"url": "https://youtu.be/2cUkUbB3Gu4"})
-    except AssertionError as error:
-        assert "422" in str(error) and "youtube_unavailable" in str(error), error
-    else:
-        raise AssertionError("Release image accepted excluded YouTube source")
     with call("/") as response:
         assert b"OpenDownload" in response.read()
     check = """

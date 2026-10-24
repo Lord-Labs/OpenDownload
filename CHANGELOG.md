@@ -4,6 +4,9 @@
 
 ### Added
 
+- Public YouTube video/audio using stable yt-dlp 2026.10.21 and its default
+  `tv_samsung` client, bundled EJS and the existing Node runtime/guarded proxy.
+
 - LinkedIn public video posts/activity URLs and `lnkd.in` resolution.
 - Pinterest public video pins, original single-image pins, `pin.it` resolution
   and regional domains. Full boards and story galleries remain unsupported.
@@ -14,6 +17,12 @@
   check for file bytes, media/ZIP validation, range serving and deletion.
 
 ### Fixed
+
+- Refresh compatible dependency PRs together; patch Go, Next.js, Zod and
+  source-map-js security advisories. Keep Node declarations on Node 24 and defer
+  TypeScript 7 and ESLint 10 until the installed lint plugins support them.
+- Report merged file size as unknown when either selected track has no known
+  size, rather than displaying only the audio track's size for YouTube HLS video.
 
 - Preserve original progressive MP4 formats when LinkedIn/Pinterest/Threads
   omit codec metadata; rank unknown-resolution formats by reported bitrate.

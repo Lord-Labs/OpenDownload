@@ -65,9 +65,6 @@ func restricted(raw RawInfo) bool {
 	return raw.DRM || raw.DetectedDRM || raw.Live || raw.Availability != "" && raw.Availability != "public" && raw.Availability != "unlisted"
 }
 func Normalize(raw RawInfo, source string) (Analysis, error) {
-	if YouTubeSource(source) || strings.EqualFold(raw.Extractor, "Youtube") {
-		return Analysis{}, ErrYouTubeUnavailable
-	}
 	if restricted(raw) {
 		return Analysis{}, ErrAccess
 	}
@@ -161,7 +158,12 @@ func Normalize(raw RawInfo, source string) (Analysis, error) {
 				ext = "mkv"
 			}
 			detail = fmt.Sprintf("%s · audio included", strings.ToUpper(ext))
-			bytes += audio.Bytes
+			// A partial track size is not the merged file size.
+			if bytes > 0 && audio.Bytes > 0 {
+				bytes += audio.Bytes
+			} else {
+				bytes = 0
+			}
 		} else {
 			detail += " · audio included"
 		}

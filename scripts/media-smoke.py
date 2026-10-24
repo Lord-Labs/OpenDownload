@@ -15,6 +15,7 @@ parser.add_argument("--origin", default="http://localhost:3000")
 parser.add_argument("--source", default="https://download.blender.org/durian/trailer/sintel_trailer-480p.mp4")
 parser.add_argument("--ffprobe", default="ffprobe")
 parser.add_argument("--output", default=".data/smoke")
+parser.add_argument("--video-option", help="Video option ID returned by analysis; defaults to the first video")
 args = parser.parse_args()
 handlers = [urllib.request.HTTPCookieProcessor(http.cookiejar.CookieJar())]
 access_user = os.environ.get("OD_SMOKE_USER")
@@ -40,7 +41,7 @@ assert status["ready"] and not status["fixtureMode"], "Real media tools must be 
 analysis = api("/analyze", {"url": args.source})
 output = pathlib.Path(args.output)
 output.mkdir(parents=True, exist_ok=True)
-for option in (next(o for o in analysis["options"] if o["kind"] == "video"),
+for option in (next(o for o in analysis["options"] if o["kind"] == "video" and (args.video_option is None or o["id"] == args.video_option)),
                next(o for o in analysis["options"] if o["id"] == "audio-mp3")):
     job = api("/jobs", {"analysisId": analysis["id"], "optionId": option["id"]})
     deadline = time.monotonic() + 180
